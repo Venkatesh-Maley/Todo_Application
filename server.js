@@ -48,5 +48,7 @@ app.delete('/delete/:id', async (req,res) =>{
     }
 })
 
-
+app.get("/", (req, res) => {
+    res.send("Backend is running!");
+});
 app.listen(5000, () => console.log('Server Running...'));
