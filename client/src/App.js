@@ -7,20 +7,20 @@ const App = () => {
   const [item,setItem] = useState([]); 
   const [newtask,setNewtask] = useState('');
   useEffect(()=>{
-    axios.get('http://localhost:5000/gettask').then(
+    axios.get('https://todo-application-37u8.onrender.com/gettask').then(
       arr => setItem(arr.data)
     )
   },[]) 
 
   const submitHandler = e => {
     e.preventDefault();
-    axios.post('http://localhost:5000/addTask',{todo:newtask}).then(
+    axios.post('https://todo-application-37u8.onrender.com/addTask',{todo:newtask}).then(
       arr => setItem(arr.data)
     )
   }
 
   const deleteHandler = id => {
-    axios.delete(`http://localhost:5000/delete/${id}`).then(
+    axios.delete(`https://todo-application-37u8.onrender.com/delete/${id}`).then(
       arr => setItem(arr.data)
     )
   }
